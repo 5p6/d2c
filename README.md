@@ -15,14 +15,14 @@ To satisfy the environment,run command
 ```bash
 sudo apt install  libopencv-dev \
                   libeigen3-dev \
-                  libboost-dev \
+                  libboost-all-dev \
                   build-essential \
                   cmake \
                   git
 ```
-adn then
+adn then clone the repository locally
 ```bash
-git clone 
+git clone https://github.com/5p6/d2c.git
 ```
 If the environment are linux,you need to change some varable in the `CMakeLists` ,which include the fmt and opencv path,the 
 ```shell
