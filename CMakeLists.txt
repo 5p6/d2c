@@ -25,22 +25,10 @@ target_link_libraries(calib
     ${OpenCV_LIBS}
 )
 
-add_library(register SHARED
-    ./src/register.cc
-    ./src/register.h
-)
-target_link_libraries(register
-    ${OpenCV_LIBS}
-)
 # example
 add_executable(rgbd_calib ${PROJECT_SOURCE_DIR}/rgbd_calib.cc)
 target_link_libraries(rgbd_calib
     calib
-    ${Boost_LIBRARIES}
-)
-add_executable(rgbd_register ${PROJECT_SOURCE_DIR}/rgbd_register.cc)
-target_link_libraries(rgbd_register
-    register
     ${Boost_LIBRARIES}
 )
 add_executable(rgbd_align ${PROJECT_SOURCE_DIR}/rgbd_align.cc)
