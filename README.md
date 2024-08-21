@@ -146,7 +146,7 @@ Or convert it into the following equation
 
 $$\begin{align}
 \begin{cases}
-  M_{rgb} = R_{rgb}R_{ir}^TM_{ir} + t_{rgb} - R_{rgb}R_{ir}^Tt_{ir} \\
+  M_{rgb} = RM_{ir} + t \\
   R = R_{rgb}R_{ir}^T \\
   t = t_{rgb} - R_{rgb}^TR_{ir}t_{ir}
 \end{cases}
