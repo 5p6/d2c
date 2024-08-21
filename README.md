@@ -1,5 +1,5 @@
 ### 1.introduction
-This is a method for calibrating and registering RGBD cameras.
+This is a method for calibrating and aligning RGBD cameras.
 
 ### 2.Environment
 * ubuntu 22.04
@@ -10,7 +10,7 @@ This is a method for calibrating and registering RGBD cameras.
 
 
 ### 3.Example
-calib  --> register
+calib  --> align
 #### 3.1 build
 If the environment are linux,you need to change some varable in the `CMakeLists` ,which include the fmt and opencv path,the 
 ```shell
@@ -27,7 +27,7 @@ Run using the command line,for rgb images calibration
 ```bash
 ./build/rgbd_calib --rgb-dir /mnt/hgfs/share/dataset/calib/rgbd/calib/calib/rgb/ --depth-dir /mnt/hgfs/share/dataset/calib/rgbd/calib/calib/infrared/ -h 6 -w 7 -o . -s 20
 ```
-this program will calculate the parameters,which needed by register program,those parameters will saved in `Register.yaml`,like
+this program will calculate the parameters,which needed by align program,those parameters will saved in `align.yaml`,like
 ```yaml
 %YAML:1.0
 ---
@@ -68,9 +68,9 @@ you could use the `--help` option to check the help context,like
 #### 3.3 align
 Finally, the registration command is as follows
 ```bash
-./build/rgbd_align -r /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/rgb.png -d /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/depth.png -p ./Register.yaml
+./build/rgbd_align -r /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/rgb.png -d /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/depth.png -p ./align.yaml
 ```
-Register by inputting images, calibration parameters, and extrinsic data.This program will show the rgb image and registered depth image.
+align by inputting images, calibration parameters, and extrinsic data.This program will show the rgb image and aligned depth image.
 
 ### Appendix
 The goal of registration is to convert $(u_{ir},v_{ir})$ to $(u_{rgb},v_{rgb})$,as
