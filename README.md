@@ -74,10 +74,13 @@ Register by inputting images, calibration parameters, and extrinsic data.This pr
 
 ### Appendix
 The goal of registration is to convert $(u_{ir},v_{ir})$ to $(u_{rgb},v_{rgb})$,as
+
 $$\begin{align}
   H(u_{ir},v_{ir}) = (u_{rgb},v_{rgb})
 \end{align}$$
+
 so we need to find H to satisfy the equation as (1).the specific principle of RGBD is introduced, and its mathematical formula is as follows.The projection equations for RGB cameras and depth cameras are as follows,rgb : 
+
 $$\begin{align}
   \begin{bmatrix}
     u_{rgb} \\ v_{rgb} \\ 1
@@ -86,6 +89,7 @@ $$\begin{align}
   \end{bmatrix}
 \end{align}$$
 ir : 
+
 $$\begin{align}
   \begin{bmatrix}
     u_{ir} \\ v_{ir} \\ 1
@@ -93,6 +97,7 @@ $$\begin{align}
     X_w\\ Y_w \\ Z_w \\ 1
   \end{bmatrix}
 \end{align}$$
+
 The mathematical formula above allows for simultaneous equations,Assuming $M_{rgb},M_{ir}$ is a three-dimensional point in the coordinate system of relative camera RGB and depth
 
 $$
@@ -107,7 +112,9 @@ $$
 \end{cases}
 \end{align}
 $$
-which 
+
+which
+
 $$\begin{align}
 M_w = \begin{bmatrix}
     X_w\\ Y_w \\ Z_w 
@@ -117,11 +124,15 @@ M_w = \begin{bmatrix}
     X_{ir}\\ Y_{ir} \\ Z_{ir} 
     \end{bmatrix}
 \end{align}$$
+
 We can obtain the following equation from equation (3)
+
 $$\begin{align}
   M_{ir} = R_{ir}R_{rgb}^TM_{rgb} + t_{ir} - R_{ir}R_{rgb}^Tt_{rgb}
 \end{align}$$
+
 Convert the factors in the above equation into the following parameters
+
 $$
 \begin{align}\begin{cases}
   R = R_{ir}R_{rgb}^T \\
@@ -129,7 +140,9 @@ $$
 \end{cases}
 \end{align}
 $$
+
 Or convert it into the following equation
+
 $$\begin{align}
 \begin{cases}
   M_{rgb} = R_{rgb}R_{ir}^TM_{ir} + t_{rgb} - R_{rgb}R_{ir}^Tt_{ir} \\
@@ -139,6 +152,7 @@ $$\begin{align}
 \end{align}$$
 
 then we could get $M_{ir}$ like
+
 $$\begin{align}
   M_{ir} = \begin{bmatrix}
     \frac{d (u_{ir} - c_x^{ir})}{f_x^{ir}} \\ \frac{d(v_{ir} - c_y^{ir})}{f_y^{ir}} \\ d
@@ -153,6 +167,7 @@ $$\begin{align}
 so we could convert  $(u_{ir},v_{ir})$ to $(u_{rgb},v_{rgb})$.To conclude,we 
 * calibrate the rgb and ir camera,get data $K_{rgb,}R_{rgb},t_{rgb},K_{ir},R_{ir},t_{ir}$
 * calculate the  $R$ and $t$
+
 $$
 \begin{align}
 \begin{cases}
@@ -161,7 +176,9 @@ $$
 \end{cases}
 \end{align}
 $$
+
 * calculate the Point $M_{ir} = (X_{ir},Y_{ir},Z_{ir})$
+
 $$
 \begin{align}
 \begin{cases}
@@ -169,11 +186,14 @@ $$
   Y_{ir} = \frac{d(v_{ir} - c_y^{ir})}{f_y^{ir}} \\ 
   Z_{ir} = d
 \end{cases}\rightarrow M_{ir} \end{align} $$
+
 * calculate the Point $M_{rgb} = (X_{rgb},Y_{rgb},Z_{rgb})$
+ 
 $$\begin{align}
   M_{rgb} = RM_{ir} + t
 \end{align}$$
 * Finally, calculate the coordinates $(u_{rgb},v_{rgb})$
+
 $$\begin{align}
   u_{rgb} =  \frac{f_x^{rgb}}{Z_{rgb}} X_{rgb} + c_x^{rgb} \\
   v_{rgb} = \frac{f_y^{rgb}}{Z_{rgb}}Y_{rgb} + c_y^{rgb}
