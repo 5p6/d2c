@@ -158,7 +158,9 @@ $$\begin{align}
     \frac{d (u_{ir} - c_x^{ir})}{f_x^{ir}} \\ \frac{d(v_{ir} - c_y^{ir})}{f_y^{ir}} \\ d
   \end{bmatrix}
 \end{align}$$
+
 and convert the $M_{ir}$ to $u_{rgb},v_{rgb}$,
+
 $$\begin{align}
   u_{rgb} =  \frac{f_x^{rgb}}{Z_{rgb}} X_{rgb} + c_x^{rgb} \\
   v_{rgb} = \frac{f_y^{rgb}}{Z_{rgb}}Y_{rgb} + c_y^{rgb}
