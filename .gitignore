@@ -1,0 +1,5 @@
+build
+*register*
+*.yaml
+*.png
+.vscode*
