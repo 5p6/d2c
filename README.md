@@ -80,7 +80,7 @@ you could use the `--help` option to check the help context,like
 #### 3.3 align
 Finally, the alignmentcommand is as follows
 ```bash
-./build/rgbd_align -r /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/rgb.png -d /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/depth.png -p ./align.yaml
+./build/rgbd_align -r /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/rgb.png -d /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/depth.png -p ./Register.yaml
 ```
 align by inputting images, calibration parameters, and extrinsic data.This program will show the rgb image and aligned depth image.
 
