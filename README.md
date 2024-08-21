@@ -66,14 +66,14 @@ you could use the `--help` option to check the help context,like
 ```
 
 #### 3.3 align
-Finally, the registration command is as follows
+Finally, the alignmentcommand is as follows
 ```bash
 ./build/rgbd_align -r /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/rgb.png -d /mnt/hgfs/share/dataset/calib/rgbd/calib/test/kehu/depth.png -p ./align.yaml
 ```
 align by inputting images, calibration parameters, and extrinsic data.This program will show the rgb image and aligned depth image.
 
 ### Appendix
-The goal of registration is to convert $(u_{ir},v_{ir})$ to $(u_{rgb},v_{rgb})$,as
+The goal of alignmentis to convert $(u_{ir},v_{ir})$ to $(u_{rgb},v_{rgb})$,as
 
 $$\begin{align}
   H(u_{ir},v_{ir}) = (u_{rgb},v_{rgb})
