@@ -3,15 +3,27 @@ This is a method for calibrating and aligning RGBD cameras.
 
 ### 2.Environment
 * ubuntu 22.04
-* gnu tool 11.x
+* GNU Tools 11.x
 * OpenCV 4.x
 * Eigen 3.x
 * Boost
 
-
 ### 3.Example
-calib  --> align
+calib  --> align 
 #### 3.1 build
+To satisfy the environment,run command 
+```bash
+sudo apt install  libopencv-dev \
+                  libeigen3-dev \
+                  libboost-dev \
+                  build-essential \
+                  cmake \
+                  git
+```
+adn then
+```bash
+git clone 
+```
 If the environment are linux,you need to change some varable in the `CMakeLists` ,which include the fmt and opencv path,the 
 ```shell
 cd project_path
