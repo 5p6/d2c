@@ -88,6 +88,7 @@ $$\begin{align}
     X_w\\ Y_w \\ Z_w \\ 1
   \end{bmatrix}
 \end{align}$$
+
 ir : 
 
 $$\begin{align}
@@ -200,4 +201,5 @@ $$\begin{align}
   u_{rgb} =  \frac{f_x^{rgb}}{Z_{rgb}} X_{rgb} + c_x^{rgb} \\
   v_{rgb} = \frac{f_y^{rgb}}{Z_{rgb}}Y_{rgb} + c_y^{rgb}
 \end{align}$$
+
 remeber that $Z_{rgb} \approx d$ .
